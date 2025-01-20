@@ -3,37 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Blog</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Finance Journal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #000;
+            padding: 2rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        .section {
+            margin-bottom: 6rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section > p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .article-card {
+            border-top: 1px solid #000;
+            padding-top: 1.5rem;
+        }
+
+        .article-card h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .article-card p {
+            font-size: 0.9rem;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #000;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        .read-more:hover {
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section > p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo">Finance Blog</div>
         <nav>
-            <ul class="nav-links">
-                <li><a href="#saving">Saving</a></li>
-                <li><a href="#investing">Investing</a></li>
-                <li><a href="#pensions">Pensions</a></li>
-            </ul>
+            <div class="logo">Finance Journal</div>
+            <div class="nav-links">
+                <a href="#saving">Saving</a>
+                <a href="#investing">Investing</a>
+                <a href="#pensions">Pensions</a>
+            </div>
         </nav>
     </header>
+
     <main>
-        <section id="saving">
+        <section id="saving" class="section">
             <h2>Saving</h2>
-            <p>How to maximise savings.</p>
+            <p>Essential strategies and practical approaches to building your financial foundation.</p>
+            <div class="article-grid">
+                <article class="article-card">
+                    <h3>Building an Emergency Fund</h3>
+                    <p>A systematic approach to creating a robust financial safety net.</p>
+                    <a href="#" class="read-more">Continue Reading</a>
+                </article>
+                <article class="article-card">
+                    <h3>Strategic Saving Methods</h3>
+                    <p>Optimize your saving habits with proven techniques and methodologies.</p>
+                    <a href="#" class="read-more">Continue Reading</a>
+                </article>
+            </div>
         </section>
-        <section id="investing">
+
+        <section id="investing" class="section">
             <h2>Investing</h2>
-            <p>The basics to learn and start investing.</p>
+            <p>Understanding market dynamics and building long-term wealth through strategic investment.</p>
+            <div class="article-grid">
+                <article class="article-card">
+                    <h3>Index Fund Fundamentals</h3>
+                    <p>A comprehensive guide to passive investment strategies.</p>
+                    <a href="#" class="read-more">Continue Reading</a>
+                </article>
+                <article class="article-card">
+                    <h3>Portfolio Theory</h3>
+                    <p>Modern approaches to risk management and asset allocation.</p>
+                    <a href="#" class="read-more">Continue Reading</a>
+                </article>
+            </div>
         </section>
-        <section id="pensions">
+
+        <section id="pensions" class="section">
             <h2>Pensions</h2>
-            <p>Understand & prepare for one of the most important events in your life.</p>
+            <p>Long-term retirement planning and pension optimization strategies.</p>
+            <div class="article-grid">
+                <article class="article-card">
+                    <h3>Pension Structures</h3>
+                    <p>Analysis of different pension types and their implications.</p>
+                    <a href="#" class="read-more">Continue Reading</a>
+                </article>
+                <article class="article-card">
+                    <h3>Contribution Strategies</h3>
+                    <p>Maximizing the efficiency of your pension contributions.</p>
+                    <a href="#" class="read-more">Continue Reading</a>
+                </article>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>© 2025 Finance Blog. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
