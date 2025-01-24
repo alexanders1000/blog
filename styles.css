@@ -1,38 +1,43 @@
+/* styles.css */
 :root {
-  --primary-black: #000;
-  --secondary-black: #222;
-  --white: #fff;
-  --gray: #f4f4f4;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --background: #fff;
+  --accent: #333333; /* 0066cc */
+  --spacing: 2rem;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
-  color: var(--primary-black);
-  background-color: var(--white);
+  color: var(--text-primary);
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--spacing);
 }
 
 nav {
-  border-bottom: 2px solid var(--primary-black);
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing);
+  padding-bottom: var(--spacing);
+  border-bottom: 1px solid #eee;
 }
 
 nav a {
-  color: var(--primary-black);
-  text-decoration: none;
   margin-right: 1rem;
-  font-weight: bold;
+  color: var(--text-primary);
+  text-decoration: none;
 }
 
 nav a:hover {
-  color: var(--secondary-black);
+  color: var(--accent);
+}
+
+h1, h2, h3 {
+  color: var(--text-primary);
 }
 
 .section {
+  margin-bottom: var(--spacing);
   display: none;
 }
 
@@ -40,17 +45,18 @@ nav a:hover {
   display: block;
 }
 
-.blog-card {
-  border: 1px solid var(--primary-black);
+.project-card, .essay-card, .book-card {
+  border: 1px solid #eee;
   padding: 1rem;
   margin-bottom: 1rem;
+  border-radius: 4px;
 }
 
-.blog-card a {
-  color: var(--primary-black);
-  text-decoration: none;
+.project-card:hover, .essay-card:hover, .book-card:hover {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.blog-card a:hover {
-  text-decoration: underline;
+.date {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
