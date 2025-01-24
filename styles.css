@@ -60,3 +60,13 @@ h1, h2, h3 {
   color: var(--text-secondary);
   font-size: 0.9rem;
 }
+
+/* adding formatting for css code */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
